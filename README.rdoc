@@ -1,3 +1,4 @@
 = DbdOntoEngine
 
-This project rocks and uses MIT-LICENSE.
+This is a Rails Engine that will serve the ontologies that are defined
+in dbd_onto.

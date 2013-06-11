@@ -5,7 +5,17 @@ module DbdOntoEngine
     describe "GET /ontologies" do
       it "shows the ontologies" do
         visit dbd_onto_engine.root_path
-        expect(page).to have_text('ontologies')
+        expect(page).to have_text('Ontologies')
+      end
+
+      it "shows the provenance ontology" do
+        visit dbd_onto_engine.root_path
+        expect(page).to have_text('Provenance')
+      end
+
+      it "shows the meta ontology" do
+        visit dbd_onto_engine.root_path
+        expect(page).to have_text('Provenance')
       end
     end
   end

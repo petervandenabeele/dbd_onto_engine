@@ -1,0 +1,11 @@
+0.0.1 (June 2013)
+=====
+
+* first version, some scaffold with fixed text
+* used in dbd_demo as a test
+
+0.0.2 (11 Aug 2013)
+=====
+
+* upgrade to Rails 4.0.0
+* still fixed text, but upgraded to "Context", "Meta"

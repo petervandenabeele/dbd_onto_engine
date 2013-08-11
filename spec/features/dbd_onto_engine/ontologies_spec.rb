@@ -4,19 +4,32 @@ module DbdOntoEngine
   describe "Ontologies" do
     describe "GET /ontologies" do
 
-      before(:each) { visit dbd_onto_engine.root_path }
-
-      it "shows the ontologies" do
-        expect(page).to have_text('Ontologies')
+      context "routing" do
+        it "when the engine is mounted under /" do
+          dbd_onto_engine.ontologies_path.should == '/ontologies'
+        end
       end
 
-      it "shows the link to the context ontology" do
-        expect(page).to have_text('Context')
-      end
+      context "page content" do
 
-      it "shows the link to the meta ontology" do
-        expect(page).to have_text('Meta')
+        before(:each) do
+          visit(dbd_onto_engine.ontologies_path)
+        end
+
+        it "shows the ontologies" do
+          expect(page).to have_text('Ontologies')
+        end
+
+        it "shows the link to the context ontology" do
+          #expect(page).to have_link(url_for(action: 'show', id: 'context')) # have_text('Context')
+          expect(page).to have_text('Context')
+        end
+
+        it "shows the link to the meta ontology" do
+          expect(page).to have_text('Meta')
+        end
       end
     end
   end
 end
+

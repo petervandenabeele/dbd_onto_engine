@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount DbdOntoEngine::Engine => "/ontologies"
+  mount DbdOntoEngine::Engine => "/"
 end

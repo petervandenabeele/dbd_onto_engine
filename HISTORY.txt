@@ -9,3 +9,9 @@
 
 * upgrade to Rails 4.0.0
 * still fixed text, but upgraded to "Context", "Meta"
+
+0.0.3 (11 Aug 2013)
+=====
+
+* move the mount location of the engine to /
+* move the ontologies route from root to /ontologies in the engine

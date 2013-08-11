@@ -4,6 +4,7 @@ module DbdOntoEngine
   describe OntologiesController do
     describe "GET 'index'" do
       it "returns http success" do
+        # work around are a set of features specs
         # pending ("Unable to get path helpers fully correct for Engines + RSpec?")
         # Failure/Error: get 'index'
         # ActionController::UrlGenerationError:

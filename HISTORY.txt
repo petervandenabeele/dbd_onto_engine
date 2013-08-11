@@ -15,3 +15,8 @@
 
 * move the mount location of the engine to /
 * move the ontologies route from root to /ontologies in the engine
+
+0.0.4 (11 Aug 2013)
+=====
+
+* predicates of ontologies are now read from DbdOnto::<klass>

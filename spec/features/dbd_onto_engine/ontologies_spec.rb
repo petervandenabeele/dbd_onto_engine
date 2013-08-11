@@ -30,6 +30,27 @@ module DbdOntoEngine
         end
       end
     end
+
+    describe "GET /ontologies/:id" do
+
+      context "routing" do
+        it "when the engine is mounted under /" do
+          dbd_onto_engine.ontology_path(id: 'foo').should == '/ontologies/foo'
+        end
+      end
+
+      context "page content" do
+
+        before(:each) { visit dbd_onto_engine.ontology_path(id: 'context') }
+
+        it "shows the context ontology" do
+          expect(page).to have_text('Context')
+        end
+
+        it "shows the context:visibility predicate" do
+          expect(page).to have_text('context:visibility')
+        end
+      end
+    end
   end
 end
-

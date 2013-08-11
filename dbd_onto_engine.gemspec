@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '>= 4.0.0'
   s.add_dependency 'haml'
+  s.add_dependency 'dbd_onto'
 
   s.add_development_dependency 'haml-rails'
   s.add_development_dependency 'rspec-rails'

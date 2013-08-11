@@ -39,6 +39,12 @@ module DbdOntoEngine
         end
       end
 
+      context "security" do
+        it "raises error for invalid ontology name" do
+          expect{ visit dbd_onto_engine.ontology_path(id: 'foobar') }.to raise_error(RuntimeError)
+        end
+      end
+
       context "page content" do
 
         before(:each) { visit dbd_onto_engine.ontology_path(id: 'context') }

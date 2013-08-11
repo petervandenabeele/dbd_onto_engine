@@ -21,7 +21,7 @@ module DbdOntoEngine
 
     def ontology_class(ontology_name)
       if supported_ontologies.include? @ontology
-        Object.const_get("DbdOnto::#{@ontology.capitalize}")
+        "DbdOnto::#{@ontology.capitalize}".constantize
       else
         raise "Invalid ontology"
       end

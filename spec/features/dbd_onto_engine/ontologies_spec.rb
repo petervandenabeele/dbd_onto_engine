@@ -21,8 +21,7 @@ module DbdOntoEngine
         end
 
         it "shows the link to the context ontology" do
-          #expect(page).to have_link(url_for(action: 'show', id: 'context')) # have_text('Context')
-          expect(page).to have_text('Context')
+          expect(page).to have_link('Context', '/ontologies/context/')
         end
 
         it "shows the link to the meta ontology" do

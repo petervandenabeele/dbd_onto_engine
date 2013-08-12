@@ -6,6 +6,7 @@ module DbdOntoEngine
       g.test_framework      :rspec,        :fixture => false
       g.assets false
       g.helper false
+      g.template_engine :haml
     end
   end
 end

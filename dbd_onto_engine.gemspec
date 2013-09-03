@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/petervandenabeele/dbd_onto_engine"
   s.summary     = "Display dbd_onto as part of a web app."
   s.description = "A Rails engine that serves the dbd_onto ontology."
+  s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]

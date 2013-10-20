@@ -1,0 +1,19 @@
+.ontology table {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    border: 1px solid darkgray;
+    color: darkred;
+    border-collapse:collapse;
+}
+
+.ontology thead th {
+    padding: 3px;
+    border-bottom: 1px solid darkgray;
+    border-left: 1px dotted darkgray;
+}
+
+.ontology td {
+    padding: 3px;
+    border: 1px dotted darkgray;
+}

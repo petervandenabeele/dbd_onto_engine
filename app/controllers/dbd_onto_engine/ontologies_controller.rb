@@ -2,15 +2,14 @@ require_dependency "dbd_onto_engine/application_controller"
 
 module DbdOntoEngine
   class OntologiesController < ApplicationController
+
     def index
       @ontologies = supported_ontologies
     end
 
     def show
       @ontology = params[:id]
-      @ontology_predicates = ontology_class(@ontology).new.
-        select{ |e| e.predicate == 'meta:defines_predicate'}.
-        map(&:object)
+      @ontology_predicates = resources(ontology_class(@ontology).new)
     end
 
   private
@@ -26,5 +25,11 @@ module DbdOntoEngine
         raise "Invalid ontology"
       end
     end
+
+    # TODO move this to the Dbd::Graph#resources
+    def resources(graph)
+      graph.subjects.map{ |s| graph.by_subject(s) }.select{ |cs| cs.first.class == Dbd::Fact }
+    end
+
   end
 end

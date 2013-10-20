@@ -1,1 +1,6 @@
-%p= ontology_predicate
+%tr
+  - uri = ontology_predicate.detect{ |fact| fact.predicate == 'rdf:uri'}.object
+  - defines_predicate = ontology_predicate.detect{ |fact| fact.predicate == 'meta:defines_predicate'}.object
+  %td= link_to(defines_predicate, uri)
+  %td= ontology_predicate.detect{ |fact| fact.predicate == 'rdfs:label'}.object
+  %td= ontology_predicate.detect{ |fact| fact.predicate == 'rdfs:comment'}.object

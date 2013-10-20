@@ -25,3 +25,10 @@
 =====
 
 * linking classes from ../ontologies
+
+0.0.6 (2013-10-13)
+=====
+
+* add the Schema.org predicates (from dbd_onto)
+* improve styling
+* use the meta:predicate_used property

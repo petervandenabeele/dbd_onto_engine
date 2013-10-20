@@ -44,7 +44,7 @@ module DbdOntoEngine
         end
       end
 
-      context "page content" do
+      context "context page content" do
 
         before(:each) { visit dbd_onto_engine.ontology_path(id: 'context') }
 
@@ -54,6 +54,19 @@ module DbdOntoEngine
 
         it "shows the context:visibility predicate" do
           expect(page).to have_text('context:visibility')
+        end
+      end
+
+      context "schema page content" do
+
+        before(:each) { visit dbd_onto_engine.ontology_path(id: 'schema') }
+
+        it "shows the schema ontology" do
+          expect(page).to have_text('Schema')
+        end
+
+        it "shows the schema:about predicate" do
+          expect(page).to have_text('schema:about')
         end
       end
     end

@@ -16,7 +16,7 @@ module DbdOntoEngine
   private
 
     def supported_ontologies
-      %w{context meta}
+      %w{context meta schema}
     end
 
     def ontology_class(ontology_name)

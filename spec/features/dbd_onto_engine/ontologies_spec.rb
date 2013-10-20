@@ -10,7 +10,7 @@ module DbdOntoEngine
         end
       end
 
-      context "page content" do
+      context "index page content" do
 
         before(:each) do
           visit(dbd_onto_engine.ontologies_path)
@@ -82,6 +82,14 @@ module DbdOntoEngine
           expect(page).to have_css('h1', text: 'Ontology Schema')
         end
 
+        it "shows an explanation for 'U'" do
+          expect(page).to have_css('p', text: 'U stands for "used"')
+        end
+
+        it "shows the header 'U'" do
+          expect(page).to have_css('th', text: /^U$/)
+        end
+
         it "shows the header 'Predicate'" do
           expect(page).to have_css('th', text: 'Predicate')
         end
@@ -92,6 +100,14 @@ module DbdOntoEngine
 
         it "shows the header 'Comment'" do
           expect(page).to have_css('th', text: 'Comment')
+        end
+
+        it "shows a predicate that is used (V)" do
+          expect(page).to have_css('td', text: /^V$/)
+        end
+
+        it "shows a predicate that is not used (-)" do
+          expect(page).to have_css('td', text: /^\-$/)
         end
 
         it "shows the schema:about predicate" do

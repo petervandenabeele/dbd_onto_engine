@@ -9,7 +9,7 @@ module DbdOntoEngine
 
     def show
       @ontology = params[:id]
-      @ontology_predicates = resources(ontology_class(@ontology).new)
+      @ontology_predicates = resources(ontology)
     end
 
   private
@@ -24,6 +24,10 @@ module DbdOntoEngine
       else
         raise "Invalid ontology"
       end
+    end
+
+    def ontology
+      ontology_class(@ontology).new
     end
 
     # TODO move this to the Dbd::Graph#resources

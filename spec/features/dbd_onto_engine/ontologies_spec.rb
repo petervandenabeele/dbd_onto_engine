@@ -126,6 +126,19 @@ module DbdOntoEngine
           expect(page).to have_css('td', text: 'The subject matter of the content.')
         end
       end
+
+      context "dbd page content" do
+
+        before(:each) { visit dbd_onto_engine.ontology_path(id: 'dbd') }
+
+        it "shows the dbdb ontology" do
+          expect(page).to have_text('Dbd')
+        end
+
+        it "shows the dbd:rdf_url predicate" do
+          expect(page).to have_text('dbd:rdf_uri')
+        end
+      end
     end
   end
 end

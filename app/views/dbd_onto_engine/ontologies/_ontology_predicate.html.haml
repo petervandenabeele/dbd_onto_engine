@@ -1,6 +1,6 @@
 %tr
   - used = ontology_predicate.detect{ |fact| fact.predicate == 'meta:predicate_used'}
-  - uri = ontology_predicate.detect{ |fact| fact.predicate == 'rdf:uri'}.object
+  - uri = ontology_predicate.detect{ |fact| fact.predicate == 'dbd:rdf_uri'}.object
   - defines_predicate = ontology_predicate.detect{ |fact| fact.predicate == 'meta:defines_predicate'}.object
   %td= used ? 'V' : '-'
   %td= link_to(defines_predicate, uri)

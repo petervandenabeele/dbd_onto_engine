@@ -9,30 +9,25 @@ module DbdOntoEngine
 
     def show
       @ontology = params[:id]
-      @ontology_predicates = resources(ontology)
+      @ontology_predicates = ontology(@ontology).resources
     end
 
   private
 
     def supported_ontologies
-      %w{context meta schema}
+      %w{context meta schema dbd}
+    end
+
+    def ontology(ontology_name)
+      ontology_class(ontology_name).new
     end
 
     def ontology_class(ontology_name)
-      if supported_ontologies.include? @ontology
-        "DbdOnto::#{@ontology.capitalize}".constantize
+      if supported_ontologies.include?(ontology_name)
+        "DbdOnto::#{ontology_name.capitalize}".constantize
       else
         raise "Invalid ontology"
       end
-    end
-
-    def ontology
-      ontology_class(@ontology).new
-    end
-
-    # TODO move this to the Dbd::Graph#resources
-    def resources(graph)
-      graph.subjects.map{ |s| graph.by_subject(s) }.select{ |cs| cs.first.class == Dbd::Fact }
     end
 
   end

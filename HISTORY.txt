@@ -32,3 +32,10 @@
 * add the Schema.org predicates (from dbd_onto)
 * improve styling
 * use the meta:predicate_used property
+
+0.0.7 (2013-10-23)
+=====
+
+* upgrade to Dbd 0.1.0 and DbdOnto 0.0.12
+* use new functions
+* use Dbd ontology

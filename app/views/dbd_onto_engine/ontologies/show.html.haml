@@ -1,5 +1,7 @@
 %h1 Ontology #{@ontology.capitalize}
 
+= render partial: 'dbd_onto_engine/shared/links'
+
 %div.ontology
   %p U stands for "used"
   %table
@@ -10,4 +12,4 @@
         %th Label
         %th Comment
     %tbody
-      =render partial: 'ontology_predicate', collection: @ontology_predicates
+      = render partial: 'ontology_predicate', collection: @ontology_predicates

@@ -1,4 +1,5 @@
 %tr
+  - # TODO Fact#objects_by_predicate => array + (single, join, ...)
   - used = ontology_predicate.detect{ |fact| fact.predicate == 'meta:predicate_used'}
   - uri = ontology_predicate.detect{ |fact| fact.predicate == 'dbd:rdf_uri'}.object
   - defines_predicate = ontology_predicate.detect{ |fact| fact.predicate == 'meta:defines_predicate'}.object

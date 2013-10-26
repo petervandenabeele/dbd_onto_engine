@@ -96,10 +96,6 @@ module DbdOntoEngine
           expect(page).to have_css('h1', text: 'Ontology Schema')
         end
 
-        it "shows an explanation for 'U'" do
-          expect(page).to have_css('p', text: 'U stands for "used"')
-        end
-
         it "shows the header 'U'" do
           expect(page).to have_css('th', text: /^U$/)
         end

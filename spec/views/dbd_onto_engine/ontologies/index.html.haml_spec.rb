@@ -5,4 +5,8 @@ describe "dbd_onto_engine/ontologies/index.html.haml" do
     render
     rendered.should match(/ontologies/i)
   end
+
+  it 'renders the links partial' do
+    render.should render_template('dbd_onto_engine/shared/_links')
+  end
 end

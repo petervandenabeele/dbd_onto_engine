@@ -34,11 +34,15 @@ module DbdOntoEngine
 
         context "headers" do
           it "shows a header to ontologies" do
-            expect(page).to have_css('a[href="/data/ontologies"]', text: 'ontologies')
+            expect(page).to have_css('a[href="/ontologies"]', text: 'ontologies')
           end
 
           it "shows a header to resources" do
             expect(page).to have_css('a[href="/data/resources"]', text: 'resources')
+          end
+
+          it "shows a header to contexts" do
+            expect(page).to have_css('a[href="/data/contexts"]', text: 'contexts')
           end
         end
       end
@@ -61,16 +65,6 @@ module DbdOntoEngine
       context "meta page content" do
 
         before(:each) { visit dbd_onto_engine.ontology_path(id: 'meta') }
-
-        context "headers" do
-          it "shows a header to ontologies" do
-            expect(page).to have_css('a[href="/data/ontologies"]', text: 'ontologies')
-          end
-
-          it "shows a header to resources" do
-            expect(page).to have_css('a[href="/data/resources"]', text: 'resources')
-          end
-        end
 
         it "shows the meta ontology" do
           expect(page).to have_text('Meta')

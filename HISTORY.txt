@@ -39,3 +39,8 @@
 * upgrade to Dbd 0.1.0 and DbdOnto 0.0.12
 * use new functions
 * use Dbd ontology
+
+0.0.8 (2014-02-09)
+=====
+
+* upgrade dbd_onto to 0.0.13
